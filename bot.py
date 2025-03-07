@@ -10,7 +10,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 BOT_TOKEN = os.getenv("BOT_TOKEN")
-MISTRAL_API_KEY = os.getenv("MISTRAL_API_KEY")  # API-ключ из .env
+MISTRAL_API_KEY = os.getenv("MISTRAL_API_KEY")  
 
 bot = Bot(token=BOT_TOKEN)
 dp = Dispatcher()
@@ -31,7 +31,7 @@ async def ask_mistral(prompt: str):
             {"role": "system", "content": "Отвечай только на русском языке. Кратко и четко."},
             {"role": "user", "content": prompt}
         ],
-        "temperature": 0.3,  # Уменьшаем креативность
+        "temperature": 0.3,  
         "max_tokens": 150
     }
 
